@@ -181,7 +181,7 @@
             },
             controls: function () {
                 if (settings.controls) {
-                    $el.after('<div class="lSAction"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
+                    $el.closest('.lSSlideOuter').append('<div class="lSAction"><a class="lSPrev">' + settings.prevHtml + '</a><a class="lSNext">' + settings.nextHtml + '</a></div>');
                     if (!settings.autoWidth) {
                         if (length <= settings.item) {
                             $slide.find('.lSAction').hide();
@@ -191,7 +191,7 @@
                             $slide.find('.lSAction').hide();
                         }
                     }
-                    $slide.find('.lSAction a').on('click', function (e) {
+                    $el.closest('.lSSlideOuter').find('.lSAction a').on('click', function (e) {
                         e.preventDefault();
                         if ($(this).attr('class') === 'lSPrev') {
                             $el.goToPrevSlide();
@@ -421,7 +421,7 @@
                     $slide.parent().find('.lSPager').css(gMargin, settings.galleryMargin + 'px');
                     refresh.createPager();
                 }
-                
+
                 setTimeout(function () {
                     refresh.init();
                 }, 0);

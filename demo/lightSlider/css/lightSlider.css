@@ -1,6 +1,7 @@
 /** /!!! core css Should not edit !!!/**/
 
 .lSSlideOuter {
+    position: relative;
     overflow: hidden;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
